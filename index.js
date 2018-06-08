@@ -1,47 +1,34 @@
-var isMomHappy = true;
+function lookPrice(id) {
+  return new Promise(function(resolve, reject) {
+    if (id === 123) {
+      resolve("It costs 500 EUR");
+    }
+    if (id === 456) {
+      resolve("It costs 400 EUR");
+    } else {
+      reject("Could not find item");
+    }
+  });
+}
 
-// Promise
-var willGetNewPhone = new Promise(function(resolve, reject) {
-  if (isMomHappy) {
-    var phone = {
-      brand: "Samsung",
-      color: "black"
-    };
-    resolve(phone);
-  } else {
-    var reason = new Error("mom is not happy");
-    reject(reason);
-  }
-});
+// function lookPrice(id) {
+//   let price;
+//   if (id === 123) {
+//     price = "300 EUR";
+//   } else {
+//     price = "Could not find item";
+//   }
 
-// call our promise
-var askMom = function() {
-  willGetNewPhone
-    .then(showOff)
-    .then(function(fulfilled) {
-      console.log(fulfilled);
-    })
-    .catch(function(error) {
-      console.log(error.message);
-    });
-};
+//   return Promise.resolve(price);
+// }
 
-// 2nd promise
-// var showOff = function(phone) {
-//   return new Promise(function(resolve, reject) {
-//     var message =
-//       "Hey friend, I have a new " + phone.color + " " + phone.brand + " phone";
-
-//     resolve(message);
-//   });
-// };
-
-// 2nd promise shortened
-var showOff = function(phone) {
-  var message =
-    "Hey friend, I have a new " + phone.color + " " + phone.brand + " phone";
-
-  // return Promise.resolve(message);
-};
-
-askMom();
+lookPrice(456)
+  .then(function(price) {
+    console.log(price);
+  })
+  .then(function() {
+    console.log("The other 'then' is executed, price:");
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
