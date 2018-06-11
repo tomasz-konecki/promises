@@ -1,5 +1,5 @@
-function generateRandomNumber() {
-  return new Promise(function(resolve, reject) {
+const generateRandomNumber = () =>
+  new Promise((resolve, reject) => {
     var randomNumber = Math.floor(Math.random() * 10 + 1);
     if (randomNumber <= 5) {
       resolve(randomNumber);
@@ -7,12 +7,11 @@ function generateRandomNumber() {
       reject(randomNumber);
     }
   });
-}
 
 generateRandomNumber()
-  .then(function(result) {
+  .then(result => {
     console.log("Success:", result);
   })
-  .catch(function(error) {
+  .catch(error => {
     console.log("Error:", error);
   });
