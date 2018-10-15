@@ -1,11 +1,7 @@
 const generateRandomNumber = () =>
   new Promise((resolve, reject) => {
     var randomNumber = Math.floor(Math.random() * 10 + 1);
-    if (randomNumber <= 5) {
-      resolve(randomNumber);
-    } else {
-      reject(randomNumber);
-    }
+    randomNumber <= 5 ? resolve(randomNumber) : reject(randomNumber);
   });
 
 generateRandomNumber()
