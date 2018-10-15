@@ -1,0 +1,20 @@
+{
+  "name": "promises",
+  "version": "1.0.0",
+  "description": "promises",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomasz-konecki/promises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomasz-konecki/promises/issues"
+  },
+  "homepage": "https://github.com/tomasz-konecki/promises#readme"
+}

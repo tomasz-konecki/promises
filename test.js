@@ -17,8 +17,8 @@ checkPrice(id)
     console.log(`It costs ${price} EUR`);
   })
   .then(() => {
-    console.log("next then");
+    console.log("Thank you.");
   })
   .catch(error => {
-    console.log(error);
+    console.log("Error:", error);
   });
