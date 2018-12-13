@@ -1,7 +1,7 @@
 window.onload = () => {
   const log = text => console.log(text);
 
-  // jQuery verion
+  // jQuery verion ($.get() has the Promise interface built into it)
 
   $.get("data/tweets.json")
     .then(tweets => {
