@@ -1,6 +1,8 @@
 window.onload = () => {
   const log = text => console.log(text);
 
+  // jQuery verion
+
   $.get("data/tweets.json")
     .then(tweets => {
       log(tweets);
@@ -14,6 +16,8 @@ window.onload = () => {
     .catch(err => log(err));
 
   /*
+  // pure JS version
+
   const get = url => {
     return new Promise((resolve, reject) => {
       let xhttp = new XMLHttpRequest();
